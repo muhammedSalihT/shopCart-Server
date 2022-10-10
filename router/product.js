@@ -30,6 +30,8 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
    
 })
 
+//     get trending
+
 productRouter.get("/api/getTrending/:id",async(req,res)=>{
 
     try{
