@@ -6,13 +6,20 @@ const productModel = require("../models/productmodel");
 productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
 
     try{
-    const product =  productModel({
-        categoryName:req.params.categoryName,
+        console.log("callde");
+    const product = await productModel({
+        categoryName:req.params.catId,
         productName:req.body.productName,
         productPrize:req.body.productPrize,
-        productType:req.body.productType
+        productType:req.body.productType,
+        images:{
+            img1:req.body.img1,
+            img2:req.body.img2,
+            img3:req.body.img3
+        }
     }
-    ) 
+    );
+    console.log(productPrize);
     // const {productName,productPrize,
     //        productType,quantity,
     //        offerPrize,images
