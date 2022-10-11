@@ -25,12 +25,12 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
     //        productType,quantity,
     //        offerPrize,images
     // } = req.body;
-    const existingProduct = await productModel.findOne({productName});
+    const existingProduct = await productModel.findOne({productName:productName});
     if(existingProduct){
         return res.status(400).json({msg:"This Product is already exsist"});
     }
-    const savedSubCategory =product.save();
-        res.status(200).json({savedSubCategory,msg:"Added"})
+   product.save();
+        res.status(200).json({product,msg:"Added"})
     } catch(e){
         console.log(e.message);
         res.status(500).json({error:e.message})
