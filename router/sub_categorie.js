@@ -96,7 +96,7 @@ subCategorieRouter.post("/api/addSubCategorie/:string",async function(req,res){
 
 subCategorieRouter.get("/api/getAllSubCategories/:id" ,async function(req,res){
     try{
-        const getAllSubCategories = await SubCategorie.find(req.params.id);
+        const getAllSubCategories = await SubCategorie.find({categoryName:req.params.id});
         console.log(getAllSubCategories);
         res.status(200).json({
             data:getAllSubCategories,
