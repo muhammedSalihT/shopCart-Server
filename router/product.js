@@ -67,10 +67,10 @@ productRouter.get("/api/getTrending/:id",async(req,res)=>{
 
 //-----------get budget--------//
 
-productRouter.get("/api/getbudget/:id/:prize",async(req,res)=>{
+productRouter.get("/api/getbudget/:id",async(req,res)=>{
 
     try{
-        const budget = await productModel.find({productType:"budget zone",categoryName:req.params.id,productPrize:req.params.prize})
+        const budget = await productModel.find({productType:"Budget Zone",categoryName:req.params.id,})
         console.log(budget);
         res.status(200).json({
             budget,
