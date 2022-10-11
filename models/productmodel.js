@@ -20,7 +20,7 @@ const productSchema = new mongoose.Schema({
         default:"new"
     },
     offerPrize:{
-        type:Number,
+        type:String,
         required:true,
     },
     productSubCategorie:{
