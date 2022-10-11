@@ -13,6 +13,7 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
         productName:req.body.productName,
         productPrize:req.body.productPrize,
         productType:req.body.productType,
+        offerPrize:req.body.offerPrize,
         images:{
             img1:req.body.images.img1,
             img2:req.body.images.img2,

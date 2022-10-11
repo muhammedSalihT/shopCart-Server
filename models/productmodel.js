@@ -19,6 +19,10 @@ const productSchema = new mongoose.Schema({
         type:String,
         default:"new"
     },
+    offerPrize:{
+        type:Number,
+        required:true,
+    },
     productSubCategorie:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"subCategorie",
