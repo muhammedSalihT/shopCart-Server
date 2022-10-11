@@ -67,14 +67,14 @@ productRouter.get("/api/getTrending/:id",async(req,res)=>{
 
 //-----------get budget--------//
 
-productRouter.get("/api/getbudget/:id",async(req,res)=>{
+productRouter.get("/api/getbudget/:id/:prize",async(req,res)=>{
 
     try{
-        const budget = await productModel.find({productType:"budget zone",categoryName:req.params.id})
+        const budget = await productModel.find({productType:"budget zone",categoryName:req.params.id,productPrize:req.params.prize})
         console.log(budget);
         res.status(200).json({
             budget,
-            message:"geting trending succesfully"
+            message:"geting  succesfully"
         })
        
 
@@ -82,7 +82,7 @@ productRouter.get("/api/getbudget/:id",async(req,res)=>{
         console.log(error)
         res.status(400).json({
             error,
-            message:"get trending unsuccesfull"
+            message:"get  unsuccesfull"
         })
     }
 })
