@@ -14,9 +14,9 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
         productPrize:req.body.productPrize,
         productType:req.body.productType,
         images:{
-            img1:req.body.img1,
-            img2:req.body.img2,
-            img3:req.body.img3
+            img1:req.body.images.img1,
+            img2:req.body.images.img2,
+            img3:req.body.images.img3
         }
     }
     );
