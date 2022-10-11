@@ -65,7 +65,7 @@ productRouter.get("/api/getTrending/:id",async(req,res)=>{
     }
 })
 
-//-----------get budget--------//
+//---------------------get budget-------------------------------//
 
 productRouter.get("/api/getbudget/:id/:prize",async(req,res)=>{
 
