@@ -9,6 +9,7 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
         console.log("callde");
     const product = await productModel({
         categoryName:req.params.catId,
+        productSubCategorie:req.params.subCatId,
         productName:req.body.productName,
         productPrize:req.body.productPrize,
         productType:req.body.productType,
@@ -19,7 +20,7 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
         }
     }
     );
-    console.log(productPrize);
+    console.log(categoryName);
     // const {productName,productPrize,
     //        productType,quantity,
     //        offerPrize,images
