@@ -41,6 +41,28 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
     }
    
 })
+//........get allproduct by categorie........//
+
+productRouter.get("/api/getAll",async(req,res)=>{
+
+    try{
+        const allProd = await productModel.find()
+        console.log(allProd);
+        res.status(200).json({
+            trending,
+            message:"geting all prod succesfully"
+        })
+       
+
+    }catch(error){
+        console.log(error)
+        res.status(400).json({
+            error,
+            message:"get prod unsuccesfull"
+        })
+    }
+})
+
 
 //    ------------------------------- get trending--------------------------
 
