@@ -47,7 +47,6 @@ productRouter.get("/api/getAll/:id",async(req,res)=>{
 
     try{
         const singleProduct = await productModel.findById(req.params.id)
-        console.log(allProd);
         res.status(200).json({
             singleProduct,
             message:"geting  prod succesfully"
