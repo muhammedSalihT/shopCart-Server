@@ -46,7 +46,7 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
 productRouter.get("/api/getAll/:id",async(req,res)=>{
 
     try{
-        const singleProduct = await productModel.findOne({_id:req.params.id})
+        const singleProduct = await productModel.findById(req.params.id)
         console.log(allProd);
         res.status(200).json({
             singleProduct,
