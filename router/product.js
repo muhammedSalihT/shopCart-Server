@@ -43,14 +43,14 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
 })
 //........get allproduct by categorie........//
 
-productRouter.get("/api/getAll",async(req,res)=>{
+productRouter.get("/api/getAll/:id",async(req,res)=>{
 
     try{
-        const allProd = await productModel.find()
+        const singleProduct = await productModel.find({_id:req.params.id})
         console.log(allProd);
         res.status(200).json({
-            allProd,
-            message:"geting all prod succesfully"
+            singleProduct,
+            message:"geting  prod succesfully"
         })
        
 
