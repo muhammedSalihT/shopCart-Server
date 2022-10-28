@@ -46,7 +46,7 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
 productRouter.get("/api/getAll",async(req,res)=>{
 
     try{
-        const allProd = await productModel.find()
+        const allProd = await req.find()
         console.log(allProd);
         res.status(200).json({
             allProd,
@@ -91,7 +91,7 @@ productRouter.get("/api/getTrending/:id",async(req,res)=>{
 productRouter.get("/api/getbudget/:id/:prize",async(req,res)=>{
 
     try{
-        const budget = await productModel.find({productType:"Budget Zone",categoryName:req.params.id,offerPrize:req.params.prize})
+        const budget = await productModel.find({productType:"Budget Zone",categoryName:req.params.id,offerPrize:{$lte:req.params.id}})
         console.log(budget);
         res.status(200).json({
             budget,
