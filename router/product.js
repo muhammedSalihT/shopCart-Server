@@ -46,7 +46,7 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
 productRouter.get("/api/getAll",async(req,res)=>{
 
     try{
-        const allProd = await productModel.find()
+        const allProd = await productModel.find(req.body)
         console.log(allProd);
         res.status(200).json({
             trending,
