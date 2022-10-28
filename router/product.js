@@ -57,6 +57,7 @@ productRouter.get("/api/getAll/:id",async(req,res)=>{
     }catch(error){
         console.log(error)
         res.status(400).json({
+            pr:req.params.id,
             error:error,
             message:"get prod unsuccesfull"
         })
