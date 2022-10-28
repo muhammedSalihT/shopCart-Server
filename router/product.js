@@ -49,7 +49,7 @@ productRouter.get("/api/getAll",async(req,res)=>{
         const allProd = await productModel.find()
         console.log(allProd);
         res.status(200).json({
-            trending,
+            allProd,
             message:"geting all prod succesfully"
         })
        
