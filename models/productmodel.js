@@ -24,7 +24,7 @@ const productSchema = new mongoose.Schema({
         default :1.5
     },
     offerPrize:{
-        type:String,
+        type:Number,
         required:true,
     },
     productDescription:{
