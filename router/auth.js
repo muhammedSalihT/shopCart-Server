@@ -44,7 +44,7 @@ authRouter.post("/api/signIn",async function(req,res){
         if(!isMatch){
            return res.status(400).json({status:false,msg:"Incorrect password"});
         }
-        return res.status(200).json({status:true,msg:"LogIn Succesfully"})
+        return res.status(200).json({status:true,msg:"LogIn Succesfully",data:user.id})
     } catch (error) {
         res.status(500).json({status:false,msg:"Credentials are required"});
         console.log(error.message);

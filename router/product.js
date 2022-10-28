@@ -14,6 +14,9 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
         productPrize:req.body.productPrize,
         productType:req.body.productType,
         offerPrize:req.body.offerPrize,
+        coustemerRatimg:req.body.coustemerRatimg,
+        productDescription:req.body.productDescription,
+        deliveryCharge:req.body.deliveryCharge,
         images:{
             img1:req.body.images.img1,
             img2:req.body.images.img2,
@@ -22,10 +25,6 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
     }
     );
     console.log(product);
-    // const {productName,productPrize,
-    //        productType,quantity,
-    //        offerPrize,images
-    // } = req.body;
     const existingProduct = await productModel.findOne({productName:req.body.productName});
     console.log(existingProduct);
     if(existingProduct){
