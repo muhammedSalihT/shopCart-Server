@@ -17,11 +17,12 @@ productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
         coustemerRatimg:req.body.coustemerRatimg,
         productDescription:req.body.productDescription,
         deliveryCharge:req.body.deliveryCharge,
-        images:{
+        images:[{
             img1:req.body.images.img1,
             img2:req.body.images.img2,
-            img3:req.body.images.img3
+            img3:req.body.images.img3,
         }
+        ]
     }
     );
     console.log(product);

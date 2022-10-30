@@ -41,11 +41,12 @@ const productSchema = new mongoose.Schema({
         required:true
     },
     quantity:{type:Number,default:1},
-    images:{
-        img1:{type:String},
-        img2:{type:String},
-        img3:{type:String},
+    images:[{
+        img1:String,
+        img2:String,
+        img3:String,
     }
+    ]
 
 })
 
