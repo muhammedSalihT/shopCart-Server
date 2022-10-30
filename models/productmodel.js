@@ -41,7 +41,7 @@ const productSchema = new mongoose.Schema({
         required:true
     },
     quantity:{type:Number,default:1},
-    images:{type:Array,
+    images:{
         img1:{type:String},
         img2:{type:String},
         img3:{type:String},
