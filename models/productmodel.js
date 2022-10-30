@@ -32,8 +32,8 @@ const productSchema = new mongoose.Schema({
         default:"Amp up your casual wardrobe with this tribal printed casual shirt that has a mandarin collar, long sleeves with button cuffs, a button placket, and a patch pocket."
     },
     deliveryCharge:{
-        type:String,
-        default:"Free Delivery"
+        type:Number,
+        default:0,
     },
     productSubCategorie:{
         type:mongoose.Schema.Types.ObjectId,
