@@ -4,7 +4,7 @@ const cartModel = require("../models/cart");
 
 cartRouter.post("/api/addtocart",async(req,res)=>{
     try{
-        console.log("called");
+        console.log(req.body);
 const {products:{productId},user_Id} = req.body;
 const exsistingCart  = await cartModel.findOne({productId});
 if(exsistingCart){
