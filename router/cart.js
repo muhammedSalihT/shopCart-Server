@@ -6,7 +6,7 @@ cartRouter.post("/api/addtocart",async(req,res)=>{
     try{
         console.log("called");
 const {products:{productId},user_Id} = req.body;
-const exsistingCart  = await cartModel.findOne({productId:req.params.productId});
+const exsistingCart  = await cartModel.findOne({productId});
 if(exsistingCart){
     return res.status(400).json({msg:"This Product is already exsist"});
 }else{
