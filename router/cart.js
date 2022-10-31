@@ -12,13 +12,9 @@ const cart = cartModel({
     user_Id:req.params.userId
 });
 const exsistingCart  = await cartModel.find({productId:req.params.productId});
-if(exsistingCart){
-    return res.status(400).json({msg:"This Product is already exsist"});
-}else{
-    cart.save();
+cart.save();
     console.log(cart);
     res.status(200).json({product,msg:"Added Succefully"})
-}
     }catch(e){
         console.log(e);
         res.status(500).json({error:e.message})
