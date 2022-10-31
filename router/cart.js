@@ -11,7 +11,7 @@ const cart = cartModel({
     }],
     user_Id:req.params.userId
 });
-const exsistingCart  = await cartModel.findOne({productId:req.params.productId});
+const exsistingCart  = await cartModel.find({productId:req.params.productId});
 if(exsistingCart){
     return res.status(400).json({msg:"This Product is already exsist"});
 }else{
