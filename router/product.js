@@ -6,7 +6,6 @@ const productModel = require("../models/productmodel");
 productRouter.post("/api/addProduct/:catId/:subCatId",async(req,res)=>{
 
     try{
-        console.log("callde");
     const product =  productModel({
         categoryName:req.params.catId,
         productSubCategorie:req.params.subCatId,
