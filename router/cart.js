@@ -11,7 +11,6 @@ const cart = cartModel({
     }],
     user_Id:req.params.userId
 });
-const exsistingCart  = await cartModel.find({productId:req.params.productId});
 cart.save();
     console.log(cart);
     res.status(200).json({product,msg:"Added Succefully"})
