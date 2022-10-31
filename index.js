@@ -4,6 +4,7 @@ const authRouter = require("./router/auth");
 const mainCategory = require("./router/main_category");
 const productRouter = require("./router/product");
 const subCategorieRouter = require("./router/sub_categorie");
+const cartRouter = require("./router/cart");
 const DB = "mongodb+srv://shopcart:shopcart123@cluster0.7lah6pd.mongodb.net/?retryWrites=true&w=majority";
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(authRouter);
 app.use(mainCategory);
 app.use(productRouter);
 app.use(subCategorieRouter);
+app.use(cartRouter);
 
 
 mongoose.connect(DB).then(()=>{
