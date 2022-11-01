@@ -1,6 +1,7 @@
 const express = require("express");
 const cartRouter = express.Router();
 const cartModel = require("../models/cart");
+const productModel = require("../models/productmodel");
 
 cartRouter.post("/api/addtocart",async(req,res)=>{
     try{
@@ -24,7 +25,8 @@ if(exsistingCart){
 cartRouter.get("/api/getallcart/",async (req,res)=>{
     try{
         const allCart = await cartModel.find({user_Id:req.query.user_Id});
-        res.status(200).json({allCart,"status":true,massege:"cart fetched succefully"})
+        const productDetails = await productModel.findById(allCart.cartitem_Id)
+        res.status(200).json({productDetails,"status":true,massege:"cart fetched succefully"})
     }catch(e){
         res.status(500).json({"status":false,message:e.message})
     }
