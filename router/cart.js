@@ -12,7 +12,7 @@ if(exsistingCart){
     return res.status(400).json({status:false,msg:"This Product is already exsist"});
 }else{
   const savedCart = await cartModel({cartitem_Id,user_Id}).save();
-    res.status(200).json({status:false,msg:"Added Succefully"})
+    res.status(200).json({savedCart,status:true,msg:"Added Succefully"})
 }
     }catch(e){
         console.log(e);
