@@ -9,10 +9,10 @@ cartRouter.post("/api/addtocart",async(req,res)=>{
 const {cartitem_Id,user_Id} = req.body;
 const exsistingCart  = await cartModel.findOne({cartitem_Id});
 if(exsistingCart){
-    return res.status(400).json({msg:"This Product is already exsist"});
+    return res.status(400).json({status:false,msg:"This Product is already exsist"});
 }else{
   const savedCart = await cartModel({cartitem_Id,user_Id}).save();
-    res.status(200).json({savedCart,msg:"Added Succefully"})
+    res.status(200).json({status:false,msg:"Added Succefully"})
 }
     }catch(e){
         console.log(e);
