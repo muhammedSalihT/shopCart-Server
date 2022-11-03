@@ -1,3 +1,4 @@
+const { query } = require("express");
 const express = require("express");
 const cartRouter = express.Router();
 const cartModel = require("../models/cart");
@@ -28,6 +29,17 @@ cartRouter.get("/api/getallcart/",async (req,res)=>{
         res.status(200).json({allCart,"status":true,massege:"cart fetched succefully"})
     }catch(e){
         res.status(500).json({"status":false,message:e.message})
+    }
+})
+
+//delete item from cart........//
+
+cartRouter.delete("/api/deleteItem/",async (req,res)=>{
+    try {
+        await cartModel.remove({cartitem_Id:req.query.cartitem_Id});
+    res.status(200).json({"status":true,message:"Item deleted from cart"})
+    } catch (error) {
+        res.status(500).json({"status":false,message:error.message})
     }
 })
 
